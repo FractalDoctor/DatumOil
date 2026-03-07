@@ -3,62 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DatumOil — Crude Oil Market Monitor</title>
-<meta name="description" content="DatumOil — real-time crude oil price monitor and market indicator display for iPhone.">
-<meta property="og:title" content="DatumOil — Crude Oil Market Monitor">
-<meta property="og:description" content="Brent and WTI prices, market indicators, and AI-powered vibe sentiment analysis.">
-<meta property="og:type" content="website">
+<title>DatumOil — Support</title>
 <style>
-  :root { --amber: #FFB300; --bg: #0D0700; --dim: #7A5A00; --green: #33FF33; --red: #FF4500; }
+  :root { --amber: #FFB300; --bg: #0D0700; --dim: #7A5A00; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); color: var(--amber); font-family: 'Courier New', monospace; padding: 2em; max-width: 720px; margin: 0 auto; line-height: 1.6; }
-  h1 { font-size: 1.6em; text-shadow: 0 0 8px rgba(255,179,0,0.4); margin-bottom: 0.3em; }
+  h1 { font-size: 1.6em; text-shadow: 0 0 8px rgba(255,179,0,0.4); border-bottom: 1px solid var(--dim); padding-bottom: 0.3em; margin-bottom: 1em; }
   h2 { font-size: 1.1em; margin: 1.5em 0 0.5em; }
-  p { margin-bottom: 0.8em; color: var(--dim); }
+  p, li { margin-bottom: 0.5em; color: var(--dim); }
+  ul { padding-left: 1.5em; }
   a { color: var(--amber); }
-  .subtitle { color: var(--dim); font-size: 0.9em; margin-bottom: 1.5em; }
-  .features { list-style: none; padding: 0; }
-  .features li { padding: 0.3em 0; }
-  .features li::before { content: "> "; color: var(--amber); }
-  .links { margin-top: 2em; }
-  .links a { display: inline-block; margin-right: 1.5em; padding: 0.3em 0; }
+  code { background: #1a0f00; padding: 0.1em 0.3em; }
   footer { margin-top: 3em; border-top: 1px solid var(--dim); padding-top: 1em; color: var(--dim); font-size: 0.8em; }
-  .badge { display: inline-block; background: #1a0f00; padding: 0.2em 0.5em; font-size: 0.8em; margin: 0.2em 0.3em 0.2em 0; }
   .barrel { color: var(--dim); font-size: 0.55em; line-height: 1.15; opacity: 0.18; margin-top: 2em; white-space: pre; user-select: none; }
 </style>
 </head>
 <body>
 
-<h1>DATUMOIL</h1>
-<div class="subtitle">Crude Oil Market Monitor</div>
+<h1>DATUMOIL — SUPPORT</h1>
 
-<p>Real-time Brent and WTI crude oil prices, key market indicators, and AI-powered vibe sentiment analysis — all in a retro CRT phosphor aesthetic.</p>
+<h2>OVERVIEW</h2>
+<p>DatumOil displays crude oil market data from the U.S. Energy Information Administration (EIA) and analyses news headlines using Apple Intelligence.</p>
 
-<h2>FEATURES</h2>
-<ul class="features">
-  <li>Brent &amp; WTI spot prices from the US Energy Information Administration</li>
-  <li>Price charts with 7D / 30D / 90D windows and moving average overlays</li>
-  <li>Crude inventories, refinery utilisation, and US rig count</li>
-  <li>Vibe sentiment analysis powered by Apple Intelligence</li>
-  <li>On-device AI scoring of oil market headlines</li>
-  <li>No tracking, no analytics, no data collection</li>
+<h2>DATA SOURCES</h2>
+<ul>
+  <li>Brent and WTI spot prices — EIA Open Data API (daily)</li>
+  <li>Crude inventories — EIA Weekly Petroleum Status Report</li>
+  <li>Refinery utilisation — EIA Weekly Petroleum Status Report</li>
+  <li>US rig count — EIA Drilling Summary</li>
+  <li>News headlines — Google News RSS</li>
+  <li>Sentiment scoring — Apple Intelligence (FoundationModels, on-device)</li>
 </ul>
 
-<h2>REQUIRES</h2>
-<p>
-  <span class="badge">iPhone</span>
-  <span class="badge">iOS 26+</span>
-  <span class="badge">Apple Intelligence</span>
-</p>
+<h2>APPLE INTELLIGENCE</h2>
+<p>The Vibe Sentiment feature requires Apple Intelligence to be enabled on your device. Each headline is scored by the on-device foundation model with oil market domain awareness. If Apple Intelligence is unavailable, the sentiment tab will indicate this.</p>
 
-<div class="links">
-  <a href="support.html">[SUPPORT]</a>
-  <a href="privacy.html">[PRIVACY]</a>
-</div>
+<h2>PRICE DATA</h2>
+<p>Prices are updated daily when markets are open. Data is cached locally for offline viewing. The barrel graphic fill level reflects the current Brent price.</p>
+
+<h2>MARKET DATA</h2>
+<p>Market indicators (inventories, refinery utilisation, rig count) are updated weekly. Tap any indicator panel to see an 8-week sparkline trend.</p>
+
+<h2>TROUBLESHOOTING</h2>
+<ul>
+  <li><strong>No data displayed:</strong> Check your internet connection. Data is fetched from the EIA API and requires connectivity on first launch.</li>
+  <li><strong>Sentiment unavailable:</strong> Ensure Apple Intelligence is enabled in Settings &gt; Apple Intelligence &amp; Siri.</li>
+  <li><strong>Stale prices:</strong> Price data updates on app foreground if older than 1 hour. Markets are closed on weekends.</li>
+</ul>
+
+<h2>CONTACT</h2>
+<p>For support queries, contact: <a href="mailto:stuart@fiddlemeragged.com">stuart@fiddlemeragged.com</a></p>
+
+<p style="margin-top: 1.5em;"><a href="privacy.html">[PRIVACY POLICY]</a></p>
 
 <footer>
   <p>&copy; 2026 Stuart Woolley. All rights reserved.</p>
-  <p>Price data: U.S. Energy Information Administration (EIA). Not financial advice.</p>
+  <p>Price data: U.S. Energy Information Administration (EIA).</p>
 </footer>
 
 <div class="barrel" aria-hidden="true">
