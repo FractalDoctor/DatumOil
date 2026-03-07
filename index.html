@@ -13,9 +13,7 @@
   p, li { margin-bottom: 0.5em; color: var(--dim); }
   ul { padding-left: 1.5em; }
   a { color: var(--amber); }
-  code { background: #1a0f00; padding: 0.1em 0.3em; }
   footer { margin-top: 3em; border-top: 1px solid var(--dim); padding-top: 1em; color: var(--dim); font-size: 0.8em; }
-  .barrel { color: var(--dim); font-size: 0.55em; line-height: 1.15; opacity: 0.18; margin-top: 2em; white-space: pre; user-select: none; }
 </style>
 </head>
 <body>
@@ -23,32 +21,34 @@
 <h1>DATUMOIL — SUPPORT</h1>
 
 <h2>OVERVIEW</h2>
-<p>DatumOil displays crude oil market data from the U.S. Energy Information Administration (EIA) and analyses news headlines using Apple Intelligence.</p>
+<p>DatumOil is a retro-styled crude oil price monitor with live market indicators and AI-powered news sentiment analysis. All data is fetched directly — no accounts, no API keys, no servers.</p>
 
 <h2>DATA SOURCES</h2>
 <ul>
-  <li>Brent and WTI spot prices — EIA Open Data API (daily)</li>
-  <li>Crude inventories — EIA Weekly Petroleum Status Report</li>
-  <li>Refinery utilisation — EIA Weekly Petroleum Status Report</li>
-  <li>US rig count — EIA Drilling Summary</li>
-  <li>News headlines — Google News RSS</li>
-  <li>Sentiment scoring — Apple Intelligence (FoundationModels, on-device)</li>
+  <li>Brent and WTI crude futures prices — Yahoo Finance</li>
+  <li>Market indicators (OVX, Natural Gas, Dollar Index) — Yahoo Finance</li>
+  <li>News headlines — Google News RSS (oil/energy)</li>
+  <li>Sentiment scoring — Apple Intelligence (on-device)</li>
 </ul>
 
+<h2>PRICE TAB</h2>
+<p>Displays live Brent and WTI futures prices with 7-day, 30-day, and 90-day chart views. Includes optional 5-day and 20-day moving averages for both benchmarks, plus the Brent-WTI spread with contango/backwardation labelling. Prices refresh automatically every 15 minutes.</p>
+
+<h2>VIBE INDEX</h2>
+<p>The fuel gauge on the Price tab shows the Vibe Index — a rolling sentiment score calculated from recent oil news headlines. The needle sweeps from bearish (left) to bullish (right). The first analysis after installing may take a minute or two. Subsequent refreshes are faster as only new headlines are scored.</p>
+
+<h2>MARKET TAB</h2>
+<p>Four key market indicators updated daily: OVX oil volatility index with threat level gauge, Henry Hub natural gas futures, Brent-WTI spread, and US Dollar Index. Each includes a block sparkline and a range bar showing where the current value sits within its 3-month trading range.</p>
+
 <h2>APPLE INTELLIGENCE</h2>
-<p>The Vibe Sentiment feature requires Apple Intelligence to be enabled on your device. Each headline is scored by the on-device foundation model with oil market domain awareness. If Apple Intelligence is unavailable, the sentiment tab will indicate this.</p>
-
-<h2>PRICE DATA</h2>
-<p>Prices are updated daily when markets are open. Data is cached locally for offline viewing. The barrel graphic fill level reflects the current Brent price.</p>
-
-<h2>MARKET DATA</h2>
-<p>Market indicators (inventories, refinery utilisation, rig count) are updated weekly. Tap any indicator panel to see an 8-week sparkline trend.</p>
+<p>The Vibe Sentiment feature requires Apple Intelligence to be enabled on your device (Settings &gt; Apple Intelligence &amp; Siri). Each headline is scored by the on-device foundation model with oil market domain awareness. Without Apple Intelligence, cached sentiment data is still displayed if available.</p>
 
 <h2>TROUBLESHOOTING</h2>
 <ul>
-  <li><strong>No data displayed:</strong> Check your internet connection. Data is fetched from the EIA API and requires connectivity on first launch.</li>
+  <li><strong>No data displayed:</strong> Check your internet connection. Price and market data require connectivity on first launch. Pull down to refresh any tab.</li>
   <li><strong>Sentiment unavailable:</strong> Ensure Apple Intelligence is enabled in Settings &gt; Apple Intelligence &amp; Siri.</li>
-  <li><strong>Stale prices:</strong> Price data updates on app foreground if older than 1 hour. Markets are closed on weekends.</li>
+  <li><strong>Stale prices:</strong> Prices update automatically every 15 minutes when the app is open. Markets are closed on weekends and holidays.</li>
+  <li><strong>Analysis taking a long time:</strong> The first sentiment analysis scores each headline individually on-device. This is normal. After that, only new headlines are analysed.</li>
 </ul>
 
 <h2>CONTACT</h2>
@@ -58,55 +58,8 @@
 
 <footer>
   <p>&copy; 2026 Stuart Woolley. All rights reserved.</p>
-  <p>Price data: U.S. Energy Information Administration (EIA).</p>
+  <p>Price and market data: Yahoo Finance. Not financial advice.</p>
 </footer>
-
-<div class="barrel" aria-hidden="true">
-<!--
-  DatumOil — decorative barrel graphic
-  Commodity data visualisation since 2026
--->
-  9uroC0ah8TknZ6L3  .-=======-.
-  3anOa8h6ZnW0aXi3  |  CRUDE  |
-  dkaCaHHhMknZi0il  |   OIL   |
-  ZimMa6n0m6a0ZhHa  |=========|
-  EkSBa0m6Z0maCiWn  | BRENT   |
-  faCaS6m0Ba6XkBmH  |  &amp; WTI  |
-  LihSa0Z6ka60Tk3m  |         |
-  KanMaH0mk0nmC3in  |  $XX.XX |
-  ZaH6ai0i6k06Hm3B  |=========|
-  daM0aS06Z0k6R3mn  |/\/\/\/\/|
-  hiL6aH0k6Zk0S6mk  |\/\/\/\/\|
-  oamka60im06ZWimC6  | ~~~~~~~ |
-  haBBa0im6k06Z3km  |  ~~~~~  |
-  4ik6Cam0i6kmnakmn  | ~~~~~~~ |
-  5iaa6Hm06Z0kR3nmk  |\/\/\/\/\|
-  1HkZ6am0mkn0anm3k  |/\/\/\/\/|
-  saC0Sna0m6Zknmi3B  |=========|
-  XkHn06am0i6k0n3am  |  EIA    |
-  dimBka6Zk0nS6ikm3  |  DATA   |
-  OinCa0H6mka0Z3inm  |  ///    |
-  MaCnk06Z0kamn3imk  |=========|
-  TkmBa60im06kn3ami  | $$$$$$$ |
-  YaXnk06am0ikm3Zan  |  $$$$$  |
-  viamBk6Z0nm0a3ikm  | $$$$$$$ |
-  UamCk06Zan0im3kam  '-=======-'
-  GknBa06im0ka3Z0nm
-  2aiCk06mZn0a3imkB  PETROLEUM
-  okmBa6Z0inm03akim  PRICE DATA
-  oaCnk06Zam0in3mkB  UPDATED DAILY
-  kaiBn06Zm0ak3inmC
-  vkaBn06Zim0a3knmC
-  RamCk06Zan0im3kBn  DATA SOURCE:
-  nkiBa06Zm0ak3inmC  U.S. ENERGY
-  KamCk06Zan0im3kBn  INFORMATION
-  ikaBn06Zim0a3knmC  ADMINISTRATION
-  gkiBa06Zm0ak3inmC
-  5aiCk06mZn0a3imkB  NOT FINANCIAL
-  MkaBn06Zim0a3knmC  ADVICE
-  iamCk06Zan0im3kBn
-  GkiBa06Zm0ak3inmC  (EIA)
-</div>
 
 </body>
 </html>
